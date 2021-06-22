@@ -1,0 +1,142 @@
+:root {
+  --fontbase: "Roboto", sans-serif;
+  --white: #ffffff;
+  --black-1: #202020;
+  --primary: #1b90fc;
+  --grey: #929292;
+  --headline1: 700 2.5rem / normal var(--fontbase);
+  --subtitle1: 700 1.625rem/1.5rem var(--fontbase);
+  --button: 700 0.875rem/1rem var(--fontbase);
+  --headline2: 700 1.5rem / normal var(--fontbase);
+  --body1-regular: 400 1rem/1.5rem var(--fontbase);
+  --body1-bold: 700 1rem/1.5rem var(--fontbase);
+  --body2-bold: 700 0.875rem/1.5rem var(--fontbase);
+  --body2-regular: 400 0.875rem/1.5rem var(--fontbase);
+  --caption-regular: 400 0.75rem/1.5rem var(--fontbase);
+  --caption-bold: 700 0.75rem/1.5rem var(--fontbase);
+}
+
+/* reset */
+body,
+h1,
+p {
+  margin: 0;
+}
+
+::selection {
+  background-color: #06440d;
+}
+
+/* custom styles */
+.hero {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black-1);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+.hero__image {
+  max-width: 100%;
+  display: block;
+}
+
+.hero__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--black-1);
+}
+.utility-wrapper {
+  margin: auto;
+  max-width: 600px;
+}
+
+.hero__description__paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 414px;
+  margin: 1.5rem 0;
+}
+
+.title {
+  text-transform: uppercase;
+  font: var(--headline2);
+}
+
+.text {
+  font: var(--body2-regular);
+}
+
+.button {
+  font: var(--button);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  display: block;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  background-color: var(--primary);
+}
+
+.title,
+.text,
+.button {
+  color: var(--white);
+}
+@media (min-width: 768px) {
+  .hero__description {
+    align-items: initial;
+  }
+  .utility-wrapper {
+    margin: initial;
+    max-width: initial;
+  }
+  .hero {
+    clip-path: none;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .title {
+    font: var(--headline1);
+  }
+  .text {
+    font: var(--body1-regular);
+  }
+
+  .hero {
+    flex-direction: row-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  }
+
+  .hero__banner,
+  .hero__description {
+    align-items: center;
+    flex: 1;
+  }
+
+  .utility-wrapper {
+    margin: auto;
+    max-width: 600px;
+  }
+
+  .hero__image {
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+  }
+  .button {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .hero__image {
+    object-fit: none;
+  }
+}
